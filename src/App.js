@@ -1,24 +1,52 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  useHistory
+} from "react-router-dom";
+import Cookies from 'js-cookie';
+import ProtectedRoute from './ProtectedRoute';
+import ProtectedLogin from './ProtectedLogin';
+
+//AuthAPI
+import AuthApi from './context/AuthApi';
+
+
+//Local-Components
+import Dashboard from './components/Dashboard';
+import Login from './components/Login';
+
+
 import './App.css';
 
 function App() {
+  const [auth, setAuth] = useState(false);
+  const [user, setUser] = useState({})
+  const isLoggedIn = () => {
+    const user = Cookies.get('user');
+    if(user){
+      setAuth(true);
+      setUser(JSON.parse(user));
+    }
+  }
+  useEffect(() => {
+    isLoggedIn();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AuthApi.Provider
+      value={{
+        auth, setAuth, user, setUser
+      }}
+    >
+    <Router>
+      <Switch>
+          <ProtectedLogin exact path='/login' auth={auth}  component={Login}  />
+          <ProtectedRoute exact path="/" auth={auth} component={Dashboard} />
+        </Switch>
+    </Router>
+    </AuthApi.Provider>
   );
 }
 
