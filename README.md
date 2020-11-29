@@ -13,6 +13,8 @@ For this dashboard application I have used [JSON Server](https://github.com/typi
 ## Functionality
 
 - Login (Login with any random id and name and you can add/delete/Update tasks, if you logout and login back with same ID you will be able to see the list of task you have already added.)
+- React Routing
+- Protected Routing.
 - CRUD operation of Tasks.
 - Skeleton Loading (for the initial loading).
 - Snapshot test cases.
