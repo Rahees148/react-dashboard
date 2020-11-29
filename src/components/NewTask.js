@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useContext } from 'react';
 import styled from 'styled-components';
 
 //Context
-import {useContext} from 'react';
 import {TaskContext} from '../context/TaskContext';
+import AuthApi from '../context/AuthApi';
 
 const Wrapper = styled.section`
   display: flex;
@@ -61,6 +61,7 @@ const Button = styled.button`
 
 function NewTask(){
     const context = useContext(TaskContext);
+    const Auth = useContext(AuthApi);
     const [newTaskName, setNewTaskName] = useState('');
     const [fieldError, setFieldError] = useState(false);
 
@@ -77,6 +78,7 @@ function NewTask(){
                 "id":Math.floor(Math.random() * 1000),
                 "name": newTaskName,
                 "completed": false,
+                "userId":Auth.user.id
             }
             context.addItem(newTask);
             context.toggleNewTask();

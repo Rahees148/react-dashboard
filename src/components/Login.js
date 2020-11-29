@@ -1,4 +1,6 @@
 import React, {  useState, useContext } from 'react';
+import {apiProvider} from '../services/provider';
+
 import Cookies from 'js-cookie';
 import styled from 'styled-components';
 
@@ -52,14 +54,14 @@ function Login(props){
     const [userName, setUserName] = useState('');
 
     const handleLogin = () => {
-      Auth.setAuth(true);
       const user = {
-        userId,
+        id: parseInt(userId),
         userName
       }
+      apiProvider.post('profile',user);
       Cookies.set('user', JSON.stringify(user));
+      Auth.setAuth(true);
       Auth.setUser(user);
-      
     }
 
     return (

@@ -71,8 +71,9 @@ function TaskItem(props){
     const [doEdit, setEidt] = useState(false);
     const context = useContext(TaskContext);
     const task = props.task;
-    const [checked, setChecked] = useState(false);
+    const [checked, setChecked] = useState(task.completed);
     const [taskName, setTaskName] = useState(task.name);
+
     const handleCheckboxChange = event => {
             setChecked(!checked);
             if(!checked){

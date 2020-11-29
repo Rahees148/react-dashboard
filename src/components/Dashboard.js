@@ -1,6 +1,10 @@
-import React, { useEffect, useState } from 'react';
+/* eslint-disable react-hooks/exhaustive-deps */
+
+import React, { useEffect, useState, useContext } from 'react';
 import styled from 'styled-components';
-import {Fragment} from 'react';
+
+import {apiProvider} from '../services/provider';
+import AuthApi from '../context/AuthApi';
 
 //Local-Components
 import Header from './Header';
@@ -8,13 +12,11 @@ import CompletedTask from './CompletedTask';
 import LatestTask from './LatestTask';
 import PieChart from './PieChart';
 import Tasks from './Tasks';
-
-//Context
-import {TaskContext} from '../context/TaskContext';
-
 import NoTask from './NoTask';
 import NewTask from './NewTask';
 
+//Context
+import {TaskContext} from '../context/TaskContext';
 
 
 const Wrapper = styled.section`
@@ -39,21 +41,30 @@ const Gird = styled.div`
 
 
 function Dashboard(props){
-  
-    const [tasks, setTasks] = useState([]);
-    const [showNewTask, setshowNewTask] = useState(false);
+  const Auth = useContext(AuthApi);
+  const [tasks, setTasks] = useState([]);
+  const [showNewTask, setshowNewTask] = useState(false);
 
     useEffect(()=>{
-      const taskList = localStorage.getItem('tasks');
-      console.log('taskList', taskList)
-      if(taskList)
-      setTasks(JSON.parse(taskList));
-    },[])
+      getAllTasks();
+    },[]);
+
+    const getAllTasks = () => {
+      // const taskList = localStorage.getItem('tasks');
+
+      apiProvider.getAll(`tasks?userId=${Auth.user.id}`).then((res) => {
+        const taskList = res;
+        setTasks(taskList);
+      });
+    }
 
     const onAddItem = (item) =>{
         const newItem = [item, ...tasks]
         setTasks(newItem);
-        updateLocalStorage(newItem);
+        
+        // updateLocalStorage(newItem);
+        apiProvider.post('tasks', item);
+
     }
 
     const onUpdateItem = (item) =>{
@@ -65,7 +76,9 @@ function Dashboard(props){
         }
       });
       setTasks(newState);
-      updateLocalStorage( newState);
+
+      //updateLocalStorage( newState);
+      apiProvider.put(`tasks/${item.id}`, item);
   }
 
     const onRemoveItem = (item) =>{   
@@ -73,18 +86,19 @@ function Dashboard(props){
           ...tasks.filter( (i) => i.id !== item.id)
         ]
         setTasks(remainingItems);
-        updateLocalStorage(remainingItems);
+        
+        //updateLocalStorage(remainingItems);
+        apiProvider.remove('tasks', item.id);
+
     }
 
-    const updateLocalStorage = (tasksList) =>{
-      localStorage.setItem('tasks', JSON.stringify(tasksList));
-    }
+    // const updateLocalStorage = (tasksList) =>{
+    //   localStorage.setItem('tasks', JSON.stringify(tasksList));
+    // }
 
     const onToggleNewTask = () => {
         setshowNewTask( showNewTask ? false : true );
     }
-
-
 
     return (
         <TaskContext.Provider
