@@ -8,8 +8,8 @@
 
 version: 2.1
 orbs:
-  node: circleci/node@1.1 // node orb 
-  heroku: circleci/heroku@1.2.3 // heroku orb\
+  node: circleci/node@1.1
+  heroku: circleci/heroku@1.2.3
 workflows:
   heroku_deploy:
     jobs:
