@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+Array [
+  <header
+    className="sc-dlfnbm gHSEFz"
+  >
+    <section
+      className="sc-hKgILt jWpRXe"
+    >
+      <div
+        className="sc-eCssSg iAQwdP"
+      >
+        <img
+          alt=""
+          className="sc-jSgupP kRbufp"
+          src="profile.png"
+        />
+        
+      </div>
+      <a
+        className="sc-gKsewC gxYDdi"
+        onClick={[Function]}
+      >
+        Logout
+      </a>
+    </section>
+  </header>,
+  <section
+    className="sc-iJuUWI eJVEUD"
+  >
+    <div
+      className="sc-giIncl XitEz"
+    >
+      <h1
+        className="sc-ezrdKe jPoVJd"
+      >
+        You have no task.
+      </h1>
+      <button
+        className="sc-bYEvPH jtztSv"
+        onClick={[Function]}
+      >
+        + New Task
+      </button>
+    </div>
+  </section>,
+]
+`;
