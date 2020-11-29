@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="sc-bdfBwQ dXjXda"
+>
+  <div
+    checked={false}
+    className="sc-dlfnbm dzhhmG"
+    onClick={[Function]}
+  />
+  <p
+    checked={false}
+    className="sc-eCssSg iAEvQI"
+  >
+    testing
+  </p>
+  <div
+    className="sc-gsTCUz huGVAz"
+  >
+    <i
+      className="sc-gKsewC ncsNm"
+      onClick={[Function]}
+    >
+      <img
+        alt="Edit"
+        src="pen-solid.svg"
+      />
+    </i>
+    <i
+      className="sc-gKsewC ncsNm"
+      onClick={[Function]}
+    >
+      <img
+        alt="Delete"
+        src="trash-solid.svg"
+      />
+    </i>
+  </div>
+</div>
+`;

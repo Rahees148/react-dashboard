@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<header
+  className="sc-bdfBwQ flbIOU"
+>
+  <section
+    className="sc-gsTCUz bBmhDD"
+  >
+    <div
+      className="sc-dlfnbm kYqvaO"
+    >
+      <img
+        alt=""
+        className="sc-hKgILt bocQBr"
+        src="profile.png"
+      />
+      
+    </div>
+    <a
+      className="sc-eCssSg emoWGO"
+      onClick={[Function]}
+    >
+      Logout
+    </a>
+  </section>
+</header>
+`;

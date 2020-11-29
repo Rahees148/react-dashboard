@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<section
+  className="sc-bdfBwQ eBRXiS"
+>
+  <div
+    className="sc-gsTCUz kGUyJX"
+  >
+    <h1
+      className="sc-dlfnbm OGTJf"
+    >
+      Login
+    </h1>
+    <input
+      className="sc-hKgILt brgtpj"
+      onChange={[Function]}
+      placeholder="Id"
+      type="number"
+    />
+    <input
+      className="sc-hKgILt brgtpj"
+      onChange={[Function]}
+      placeholder="Name"
+    />
+    <button
+      className="sc-eCssSg gpINEo"
+      onClick={[Function]}
+    >
+      Login
+    </button>
+  </div>
+</section>
+`;

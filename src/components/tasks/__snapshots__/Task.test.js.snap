@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+Array [
+  <div
+    className="sc-gsTCUz fmULOU"
+  >
+    <h3
+      className="sc-dlfnbm jLgNUo"
+    >
+      Tasks
+    </h3>
+    <div
+      className="sc-hKgILt bhRaLE"
+    >
+      <input
+        className="sc-jSgupP dnStGB"
+        onChange={[Function]}
+        placeholder="Search by task name"
+        type="search"
+      />
+      <button
+        className="sc-eCssSg fexhFr"
+        onClick={[Function]}
+      >
+        + New Task
+      </button>
+    </div>
+  </div>,
+  <div
+    className="sc-bdfBwQ iUEVFm"
+  >
+    <div>
+      No Task Found with 
+      
+       
+    </div>
+  </div>,
+]
+`;

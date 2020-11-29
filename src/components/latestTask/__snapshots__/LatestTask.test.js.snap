@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="sc-bdfBwQ iUEVFm"
+>
+  <h3
+    className="sc-gsTCUz XHuqs"
+  >
+    Latest Created Tasks
+  </h3>
+  <ul
+    className="sc-dlfnbm liKKHL"
+  />
+</div>
+`;
