@@ -7,29 +7,29 @@ workflows:
     jobs:
       - build
       - heroku/deploy-via-git:
-        requires:
-          - build
-        filters:
-          branches:
-            only: master
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
 jobs:
   build:
     docker:
       - image: circleci/node:10.16.0
     steps:
       - checkout
-      - restore_cache:
-        key: dependency-cache-{{ checksum "package.json" }}
-      - run:
-        name: install-npm-dependencies
-        command: npm install
       - save_cache:
-        key: dependency-cache-{{ checksum "package.json" }}
-        paths:
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
           - ./node_modules
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+      - run:
+          name: install-npm-dependencies
+          command: npm install
       - run: # run tests
-        name: test
-        command: npm test
+          name: test
+          command: npm test
       - run: # run build
-        name: Build
-        command: npm run build
+          name: Build
+          command: npm run build
