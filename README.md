@@ -16,7 +16,7 @@ For this dashboard application I have used [JSON Server](https://github.com/typi
 - CRUD operation of Tasks.
 - Skeleton Loading (for the initial loading).
 - Snapshot test cases.
-- Css in JS
+- Css in JS [Styled Component](https://styled-components.com/);
 - CICD with Circle CI.(Whenever new commit happends to any brach it will run the testcases and if you merge anything on the Master branch it will run the test cases and if its success it will automatically deploy to the heroku)
 
 
