@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {
   BrowserRouter as Router,
-  Switch,
-  Route,
-  useHistory
+  Switch
 } from "react-router-dom";
 import Cookies from 'js-cookie';
 import ProtectedRoute from './ProtectedRoute';
@@ -22,7 +20,8 @@ import './App.css';
 
 function App() {
   const [auth, setAuth] = useState(false);
-  const [user, setUser] = useState({})
+  const [user, setUser] = useState({});
+
   const isLoggedIn = () => {
     const user = Cookies.get('user');
     if(user){
@@ -30,6 +29,7 @@ function App() {
       setUser(JSON.parse(user));
     }
   }
+
   useEffect(() => {
     isLoggedIn();
   }, []);
@@ -42,9 +42,9 @@ function App() {
     >
     <Router>
       <Switch>
-          <ProtectedLogin exact path='/login' auth={auth}  component={Login}  />
-          <ProtectedRoute exact path="/" auth={auth} component={Dashboard} />
-        </Switch>
+        <ProtectedLogin exact path='/login' auth={auth}  component={Login}  />
+        <ProtectedRoute exact path="/" auth={auth} loginRequired={true} component={Dashboard} />
+      </Switch>
     </Router>
     </AuthApi.Provider>
   );

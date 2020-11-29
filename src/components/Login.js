@@ -47,6 +47,7 @@ const Button = styled.button`
 
 function Login(props){
     const Auth = useContext(AuthApi);
+
     const [userId, setUserId] = useState('');
     const [userName, setUserName] = useState('');
 
@@ -60,9 +61,9 @@ function Login(props){
       Auth.setUser(user);
       
     }
+
     return (
         <Wrapper>
-         
             <LoginContainer>
                 <Title>Login</Title>
                 <Input type="number" placeholder="Id" onChange={e => setUserId(e.target.value)} />

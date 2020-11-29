@@ -73,12 +73,12 @@ const Text = styled.p`
 function PieChart(){
     const context = useContext(TaskContext);
     const [totalCompletedTask, setCompletedTaskTotal] = useState(0);
+    const tasks = context.tasks;
     useEffect(()=>{
-        const tasks = context.tasks;
         const completedTask = tasks.filter(task => task.completed === true);
-        const completedTasksPercentage = (completedTask.length/context.tasks.length) * 100
+        const completedTasksPercentage = (completedTask.length/tasks.length) * 100
         setCompletedTaskTotal(completedTasksPercentage);
-    },[context]);
+    },[tasks]);
 
     return (
         <Card>

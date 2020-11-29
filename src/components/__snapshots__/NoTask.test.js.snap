@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<section
+  className="sc-bdfBwQ bUcYFa"
+>
+  <div
+    className="sc-gsTCUz hwMqDN"
+  >
+    <h1
+      className="sc-dlfnbm dsDWFB"
+    >
+      You have no task.
+    </h1>
+    <button
+      className="sc-hKgILt ireMci"
+      onClick={[Function]}
+    >
+      + New Task
+    </button>
+  </div>
+</section>
+`;

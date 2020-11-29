@@ -45,6 +45,7 @@ function Dashboard(props){
 
     useEffect(()=>{
       const taskList = localStorage.getItem('tasks');
+      console.log('taskList', taskList)
       if(taskList)
       setTasks(JSON.parse(taskList));
     },[])
@@ -95,7 +96,6 @@ function Dashboard(props){
             toggleNewTask: onToggleNewTask
           }}
         >
-            <Fragment>
                 <Header/>
                 {
                     tasks.length > 0 ? ( <Wrapper>
@@ -110,8 +110,6 @@ function Dashboard(props){
                 { showNewTask &&
                 <NewTask />
                 }
-                
-            </Fragment>
         </TaskContext.Provider>
        
     )

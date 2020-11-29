@@ -105,7 +105,8 @@ function TaskItem(props){
                     }
                  
               </Checkbox>
-              {doEdit ? <Input type="text" value={taskName} autoFocus={true} onChange={e => setTaskName(e.target.value)} onBlur={updateTask} /> :  <Text checked={checked} >{task.name}</Text>}
+              {doEdit ? 
+              <Input type="text" value={taskName} autoFocus={true} onChange={e => setTaskName(e.target.value)} onBlur={updateTask} /> :  <Text checked={checked} >{task.name}</Text>}
               <Action>
                   <Icon onClick={() => setEidt(true)} ><img src={EditIcon} alt="Edit" /></Icon>
                   <Icon onClick={() => context.removeItem(task)} ><img src={DeleteIcon} alt="Delete" /></Icon>

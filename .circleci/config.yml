@@ -1,7 +1,43 @@
+# version: 2.1
+# orbs:
+#   heroku: circleci/heroku@1.2.3
+# workflows:
+#   node-tests:
+#     jobs:
+#       - node/test
+
 version: 2.1
 orbs:
-  node: circleci/node@3.0.0
+  node: circleci/node@1.1 // node orb 
+  heroku: circleci/heroku@1.2.3 // heroku orb\
 workflows:
-  node-tests:
+  heroku_deploy:
     jobs:
-      - node/test
+      - build
+      - heroku/deploy-via-git: # Use the pre-configured job
+        requires:
+          - build
+        filters:
+          branches:
+            only: master
+jobs:
+  build:
+    docker:
+      - image: circleci/node:10.16.0
+    steps:
+      - checkout
+      - restore_cache:
+        key: dependency-cache-{{ checksum "package.json" }}
+      - run:
+        name: install-npm-dependencies
+        command: npm install
+      - save_cache:
+        key: dependency-cache-{{ checksum "package.json" }}
+        paths:
+          - ./node_modules
+      - run: # run tests
+        name: test
+        command: npm test
+      - run: # run build
+        name: Build
+        command: npm run build
