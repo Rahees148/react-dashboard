@@ -1,11 +1,4 @@
-import React, { useContext } from 'react';
-import Cookies from 'js-cookie';
 import styled from 'styled-components';
-
-import AuthApi from '../context/AuthApi';
-
-//Static Asset
-import profile from '../assets/profile.png'
 
 const HeaderContainer = styled.header`
   width: 100vw;
@@ -49,27 +42,10 @@ const Link = styled.a`
     cursor:pointer;
 `;
 
-function Header(){
-
-  const Auth = useContext(AuthApi);
-
-  const handleLogout = () => {
-    localStorage.clear();
-    Auth.setAuth(false);
-    Cookies.remove('user');
-  }
-
-    return (
-        <HeaderContainer>
-            <Wrapper>
-                <User>
-                    <ProfileImg src={profile} alt={Auth.user.userName} />
-                    {Auth.user.userName}
-                </User>
-                <Link onClick={handleLogout}>Logout</Link>
-            </Wrapper>
-        </HeaderContainer>
-    )
-}
-
-export default Header;
+export const Style = { 
+    HeaderContainer, 
+    Wrapper, 
+    User, 
+    ProfileImg, 
+    Link
+  };

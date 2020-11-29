@@ -1,10 +1,4 @@
-import React, { useEffect, useState } from 'react';
 import styled, { keyframes } from 'styled-components';
-
-//Context
-import {useContext} from 'react';
-import {TaskContext} from '../context/TaskContext';
-
 
 const Card = styled.div`
   width:100%;
@@ -70,23 +64,8 @@ const Text = styled.p`
   }
 `;
 
-function PieChart(){
-    const context = useContext(TaskContext);
-    const [totalCompletedTask, setCompletedTaskTotal] = useState(0);
-    const tasks = context.tasks;
-    useEffect(()=>{
-        const completedTask = tasks.filter(task => task.completed === true);
-        const completedTasksPercentage = (completedTask.length/tasks.length) * 100
-        setCompletedTaskTotal(completedTasksPercentage);
-    },[tasks]);
-
-    return (
-        <Card>
-          <Pie size={totalCompletedTask} >
-            {totalCompletedTask !== 0 && <Text>Completed Tasks</Text> }
-          </Pie>
-        </Card>
-    )
+export const Style = {
+    Card,
+    Pie,
+    Text
 }
-
-export default PieChart;

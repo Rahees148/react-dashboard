@@ -1,10 +1,4 @@
-
 import styled from 'styled-components';
-
-//Context
-import {useContext} from 'react';
-import {TaskContext} from '../context/TaskContext';
-
 
 const Wrapper = styled.section`
   width: 100vw;
@@ -48,18 +42,9 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
-function NoTask(){
-    const context = useContext(TaskContext);
-    return (
-       
-        <Wrapper>
-            <NoTaskContainer>
-                <Title>You have no task.</Title>
-                <Button onClick={context.toggleNewTask}>+ New Task</Button>
-            </NoTaskContainer>
-        </Wrapper>
-        
-    )
+export const Style = {
+    Wrapper,
+    NoTaskContainer,
+    Title,
+    Button
 }
-
-export default NoTask;

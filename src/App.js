@@ -4,16 +4,16 @@ import {
   Switch
 } from "react-router-dom";
 import Cookies from 'js-cookie';
-import ProtectedRoute from './ProtectedRoute';
-import ProtectedLogin from './ProtectedLogin';
+import ProtectedRoute from './protectedRoute/ProtectedRoute';
+import ProtectedLogin from './protectedRoute/ProtectedLogin';
 
 //AuthAPI
 import AuthApi from './context/AuthApi';
 
 
 //Local-Components
-import Dashboard from './components/Dashboard';
-import Login from './components/Login';
+import Dashboard from './containers/dashboard/Dashboard';
+import Login from './containers/login/Login';
 
 
 import './App.css';

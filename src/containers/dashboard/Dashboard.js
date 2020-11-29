@@ -1,44 +1,20 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-
 import React, { useEffect, useState, useContext } from 'react';
-import styled from 'styled-components';
+import { Style } from './Dashboard.style';
 
-import {apiProvider} from '../services/provider';
-import AuthApi from '../context/AuthApi';
+//Context & service
+import {apiProvider} from '../../services/provider';
+import AuthApi from '../../context/AuthApi';
+import {TaskContext} from '../../context/TaskContext';
 
 //Local-Components
-import Header from './Header';
-import CompletedTask from './CompletedTask';
-import LatestTask from './LatestTask';
-import PieChart from './PieChart';
-import Tasks from './Tasks';
-import NoTask from './NoTask';
-import NewTask from './NewTask';
-
-//Context
-import {TaskContext} from '../context/TaskContext';
-
-
-const Wrapper = styled.section`
-  width: 90vw;
-  margin:0 auto;
-  @media (min-width: 768px) {
-    width: 80vw;
-  }
-`;
-const Gird = styled.div`
-  width: 100%;
-  margin-top:72px;
-  padding:22px 0;
-  margin-bottom:12px;
-  display: grid;
-  grid-gap: 8px;
-  @media (min-width: 768px) {
-    grid-template-columns: repeat(auto-fill,minmax(30%, 1fr));
-    grid-gap: 2%;
-  }
-`;
-
+import Header from '../../components/header/Header';
+import CompletedTask from '../../components/completedTask/CompletedTask';
+import LatestTask from '../../components/latestTask/LatestTask';
+import PieChart from '../../components/pieChart/PieChart';
+import Tasks from '../../components/tasks/Tasks';
+import NoTask from '../../components/noTask/NoTask';
+import NewTask from '../../components/newTask/NewTask';
 
 function Dashboard(props){
   const Auth = useContext(AuthApi);
@@ -112,14 +88,14 @@ function Dashboard(props){
         >
                 <Header/>
                 {
-                    tasks.length > 0 ? ( <Wrapper>
-                    <Gird>
+                    tasks.length > 0 ? ( <Style.Wrapper>
+                    <Style.Gird>
                         <CompletedTask />
                         <LatestTask />
                         <PieChart />
-                    </Gird>
+                    </Style.Gird>
                     <Tasks />
-                    </Wrapper>) : <NoTask /> }
+                    </Style.Wrapper>) : <NoTask /> }
 
                 { showNewTask &&
                 <NewTask />
