@@ -29,6 +29,7 @@ const Input = styled.input`
   padding:11px 16px;
   margin-bottom:12px;
   outline:none;
+  border: ${props => props.fieldError === true ? '1px solid red' : 'none'};
 `;
 const Button = styled.button`
   background-color: #5285EC;

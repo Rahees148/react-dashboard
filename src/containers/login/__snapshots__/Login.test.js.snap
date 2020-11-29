@@ -13,13 +13,13 @@ exports[`renders correctly 1`] = `
       Login
     </h1>
     <input
-      className="sc-hKgILt brgtpj"
+      className="sc-hKgILt hMLUEZ"
       onChange={[Function]}
       placeholder="Id"
       type="number"
     />
     <input
-      className="sc-hKgILt brgtpj"
+      className="sc-hKgILt hMLUEZ"
       onChange={[Function]}
       placeholder="Name"
     />

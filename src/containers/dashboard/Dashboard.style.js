@@ -7,7 +7,7 @@ const Wrapper = styled.section`
     width: 80vw;
   }
 `;
-const Gird = styled.div`
+const Grid = styled.div`
   width: 100%;
   margin-top:72px;
   padding:22px 0;
@@ -22,5 +22,5 @@ const Gird = styled.div`
 
 export const Style = {
     Wrapper,
-    Gird
+    Grid
 }

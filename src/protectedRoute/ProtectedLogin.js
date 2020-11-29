@@ -1,25 +1,19 @@
-import React from 'react';
-import { Route, Redirect } from 'react-router-dom';
+import React from "react";
+import { Route, Redirect } from "react-router-dom";
 
 const ProtectedLogin = ({ component: Component, auth, ...rest }) => {
   return (
-    <Route {...rest} render={
-      props => {
+    <Route
+      {...rest}
+      render={(props) => {
         if (!auth) {
-          return <Component {...rest} {...props} />
+          return <Component {...rest} {...props} />;
         } else {
-          return <Redirect to={
-            {
-              pathname: '/',
-              state: {
-                from: props.location
-              }
-            }
-          } />
+          return <Redirect to="/" />;
         }
-      }
-    } />
-  )
-}
+      }}
+    />
+  );
+};
 
 export default ProtectedLogin;
