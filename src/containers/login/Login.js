@@ -11,24 +11,30 @@ function Login(props){
 
     const [userId, setUserId] = useState('');
     const [userName, setUserName] = useState('');
+    const [fieldError, setFieldError] = useState(false);
 
     const handleLogin = () => {
-      const user = {
-        id: parseInt(userId),
-        userName
+      if(userId.trim() && userName.trim()){
+        const user = {
+          id: parseInt(userId),
+          userName
+        }
+        apiProvider.post('profile',user);
+        Cookies.set('user', JSON.stringify(user));
+        Auth.setAuth(true);
+        Auth.setUser(user);
+      }else{
+        setFieldError(true);
       }
-      apiProvider.post('profile',user);
-      Cookies.set('user', JSON.stringify(user));
-      Auth.setAuth(true);
-      Auth.setUser(user);
+      
     }
 
     return (
         <Style.Wrapper>
             <Style.LoginContainer>
                 <Style.Title>Login</Style.Title>
-                <Style.Input type="number" placeholder="Id" onChange={e => setUserId(e.target.value)} />
-                <Style.Input placeholder="Name" onChange={e => setUserName(e.target.value)} />
+                <Style.Input fieldError={fieldError} type="number" placeholder="Id" onChange={e => setUserId(e.target.value)} />
+                <Style.Input fieldError={fieldError} placeholder="Name" onChange={e => setUserName(e.target.value)} />
                 <Style.Button onClick={handleLogin}>Login</Style.Button>
             </Style.LoginContainer>
         </Style.Wrapper>
