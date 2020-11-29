@@ -15,9 +15,6 @@ import AuthApi from './context/AuthApi';
 import Dashboard from './containers/dashboard/Dashboard';
 import Login from './containers/login/Login';
 
-
-import './App.css';
-
 function App() {
   const [auth, setAuth] = useState(false);
   const [user, setUser] = useState({});
