@@ -2,23 +2,23 @@
 
 exports[`renders correctly 1`] = `
 <header
-  className="sc-bdfBwQ flbIOU"
+  className="sc-bdfBwQ clmgsw"
 >
   <section
-    className="sc-gsTCUz bBmhDD"
+    className="sc-gsTCUz kwOwOX"
   >
     <div
-      className="sc-dlfnbm kYqvaO"
+      className="sc-dlfnbm dXxNmy"
     >
       <img
         alt=""
-        className="sc-hKgILt bocQBr"
+        className="sc-hKgILt bCMGRX"
         src="profile.png"
       />
       
     </div>
     <a
-      className="sc-eCssSg emoWGO"
+      className="sc-eCssSg cDNbQq"
       onClick={[Function]}
     >
       Logout

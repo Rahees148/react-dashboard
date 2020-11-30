@@ -8,6 +8,10 @@ import { TaskContext } from "../../context/TaskContext";
 
 import TaskItem from "../taskItem/TaskItem";
 import UseDebounce from "../../utility/UseDebounce";
+//Atoms
+import Button from "../atoms/button/Button";
+import Title from '../atoms/title/Title';
+
 
 function Tasks() {
   const context = useContext(TaskContext);
@@ -36,15 +40,15 @@ function Tasks() {
   return (
     <Fragment>
       <Style.TasksHeader>
-        <Style.Title>Tasks</Style.Title>
+        <Title>Tasks</Title>
         <Style.TasksHeaderRight>
           <Style.Search
             placeholder="Search by task name"
             onChange={(e) => setSearchTerm(e.target.value.trim())}
           />
-          <Style.Button onClick={context.toggleNewTask}>
+          <Button onClick={context.toggleNewTask}>
             + New Task
-          </Style.Button>
+          </Button>
         </Style.TasksHeaderRight>
       </Style.TasksHeader>
       <Style.Card>

@@ -2,19 +2,21 @@
 
 exports[`renders correctly 1`] = `
 <section
-  className="sc-bdfBwQ bUcYFa"
+  className="sc-bdfBwQ gTsWhG"
 >
   <div
-    className="sc-gsTCUz hwMqDN"
+    className="sc-gsTCUz hWLvjN"
   >
-    <h1
-      className="sc-dlfnbm dsDWFB"
+    <h3
+      className="sc-hKgILt ckRRbN"
     >
       You have no task.
-    </h1>
+    </h3>
     <button
-      className="sc-hKgILt ireMci"
+      className="sc-dlfnbm kuOjwl"
+      disabled={false}
       onClick={[Function]}
+      type="button"
     >
       + New Task
     </button>

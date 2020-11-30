@@ -2,30 +2,33 @@
 
 exports[`renders correctly 1`] = `
 <section
-  className="sc-bdfBwQ dKZyxU"
+  className="sc-bdfBwQ iwbbii"
 >
   <div
-    className="sc-gsTCUz jozIpk"
+    className="sc-gsTCUz hLWxtA"
     onClick={[Function]}
   />
   <div
-    className="sc-dlfnbm cDnpKU"
+    className="sc-dlfnbm gTLZrQ"
   >
-    <h1
-      className="sc-hKgILt BkdoJ"
+    <h3
+      className="sc-jSgupP grEGiv"
     >
       + New Task
-    </h1>
+    </h3>
     <input
       autoFocus={true}
-      className="sc-eCssSg hCuYBq"
+      className="sc-eCssSg bOrFAu"
       onChange={[Function]}
       onKeyDown={[Function]}
       placeholder="Task Name"
+      type="text"
     />
     <button
-      className="sc-jSgupP dsnOfR"
+      className="sc-hKgILt eRNNpn"
+      disabled={false}
       onClick={[Function]}
+      type="button"
     >
       + New Task
     </button>

@@ -7,25 +7,32 @@ exports[`renders correctly 1`] = `
   <div
     className="sc-gsTCUz kGUyJX"
   >
-    <h1
-      className="sc-dlfnbm OGTJf"
+    <h3
+      className="sc-eCssSg howFjO"
     >
       Login
-    </h1>
+    </h3>
     <input
-      className="sc-hKgILt hMLUEZ"
+      autoFocus={false}
+      className="sc-hKgILt icLQGl"
       onChange={[Function]}
+      onKeyDown={[Function]}
       placeholder="Id"
       type="number"
     />
     <input
-      className="sc-hKgILt hMLUEZ"
+      autoFocus={false}
+      className="sc-hKgILt icLQGl"
       onChange={[Function]}
+      onKeyDown={[Function]}
       placeholder="Name"
+      type="text"
     />
     <button
-      className="sc-eCssSg gpINEo"
+      className="sc-dlfnbm kuOjwl"
+      disabled={false}
       onClick={[Function]}
+      type="button"
     >
       Login
     </button>
