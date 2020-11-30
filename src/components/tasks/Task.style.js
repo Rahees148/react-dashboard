@@ -17,13 +17,6 @@ const TasksHeader = styled.div`
     align-items:center;
   }
 `;
-const Title = styled.h3`
-  color: #537178;
-  font-size:20px;
-  line-height:24px;
-  font-weight:500;
-  margin:0px 0 10px;
-`;
 
 const TasksHeaderRight = styled.div`
   display:flex;
@@ -34,20 +27,7 @@ const TasksHeaderRight = styled.div`
     margin-left:auto;
   }
 `;
-const Button = styled.button`
-  background-color: #5285EC;
-  color:#ffffff;
-  border-radius:8px;
-  width:100%;
-  padding:11px 0;
-  text-align:center;
-  outline:none;
-  cursor: pointer;
-  @media (min-width: 768px) {
-    padding:11px 22px;
-    margin-left:12px;
-  }
-`;
+
 const Search = styled.input.attrs(props => ({
   type: "search"
 }))`
@@ -59,6 +39,7 @@ margin-bottom:8px;
 outline:none;
 @media (min-width: 768px) {
   margin-bottom:0px;
+  margin-right:12px;
   text-align:left;
   width:250px
 }
@@ -67,8 +48,6 @@ outline:none;
 export const Style = {
     Card,
     TasksHeader,
-    Title,
     TasksHeaderRight,
-    Button,
     Search
 }

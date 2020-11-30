@@ -1,9 +1,13 @@
 import React, { useState, useContext } from "react";
-
 import { Style } from "./NewTask.style";
 //Context
 import { TaskContext } from "../../context/TaskContext";
 import AuthApi from "../../context/AuthApi";
+
+//Atoms
+import Button from "../atoms/button/Button";
+import Input from "../atoms/input/Input";
+import Title from "../atoms/title/Title";
 
 function NewTask() {
   const context = useContext(TaskContext);
@@ -41,15 +45,15 @@ function NewTask() {
     <Style.Wrapper>
       <Style.BlackOverlay onClick={toggleNewTask} />
       <Style.NewTaskContainer>
-        <Style.Title>+ New Task</Style.Title>
-        <Style.Input
+        <Title>+ New Task</Title>
+        <Input
           fieldError={fieldError}
           placeholder="Task Name"
           autoFocus={true}
           onChange={handleChange}
           onKeyDown={handleKeyDown}
         />
-        <Style.Button onClick={addNewTask}>+ New Task</Style.Button>
+        <Button onClick={addNewTask}>+ New Task</Button>
       </Style.NewTaskContainer>
     </Style.Wrapper>
   );

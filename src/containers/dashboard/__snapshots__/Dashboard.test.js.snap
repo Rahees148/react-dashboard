@@ -3,23 +3,23 @@
 exports[`renders correctly 1`] = `
 Array [
   <header
-    className="sc-dlfnbm gHSEFz"
+    className="sc-dlfnbm bAoyv"
   >
     <section
-      className="sc-hKgILt jWpRXe"
+      className="sc-hKgILt gScNTu"
     >
       <div
-        className="sc-eCssSg iAQwdP"
+        className="sc-eCssSg bwOWBP"
       >
         <img
           alt=""
-          className="sc-jSgupP kRbufp"
+          className="sc-jSgupP cceJut"
           src="profile.png"
         />
         
       </div>
       <a
-        className="sc-gKsewC gxYDdi"
+        className="sc-gKsewC lgxjeu"
         onClick={[Function]}
       >
         Logout
@@ -27,19 +27,21 @@ Array [
     </section>
   </header>,
   <section
-    className="sc-iJuUWI eJVEUD"
+    className="sc-lmoMRL kxBixP"
   >
     <div
-      className="sc-giIncl XitEz"
+      className="sc-iJuUWI blELXw"
     >
-      <h1
-        className="sc-ezrdKe jPoVJd"
+      <h3
+        className="sc-jrAGrp dYXEGc"
       >
         You have no task.
-      </h1>
+      </h3>
       <button
-        className="sc-bYEvPH jtztSv"
+        className="sc-cxFLnm gpivlI"
+        disabled={false}
         onClick={[Function]}
+        type="button"
       >
         + New Task
       </button>

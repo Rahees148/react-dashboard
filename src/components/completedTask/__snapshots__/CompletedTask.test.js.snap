@@ -2,19 +2,19 @@
 
 exports[`renders correctly 1`] = `
 <div
-  className="sc-bdfBwQ iUEVFm"
+  className="sc-bdfBwQ efwkwq"
 >
   <h3
-    className="sc-gsTCUz XHuqs"
+    className="sc-hKgILt ckRRbN"
   >
     Tasks Completed
   </h3>
   <h4
-    className="sc-dlfnbm ejcpHe"
+    className="sc-gsTCUz hdIXul"
   >
     0
     <span
-      className="sc-hKgILt grhbSg"
+      className="sc-dlfnbm jrKrgu"
     >
       /
       0

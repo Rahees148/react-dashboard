@@ -5,6 +5,10 @@ import { Style } from "./Login.style";
 import { apiProvider } from "../../services/provider";
 import Cookies from "js-cookie";
 import AuthApi from "../../context/AuthApi";
+//Atoms
+import Button from "../../components/atoms/button/Button";
+import Input from "../../components/atoms/input/Input";
+import Title from "../../components/atoms/title/Title";
 
 function Login(props) {
   
@@ -28,23 +32,30 @@ function Login(props) {
       setFieldError(true);
     }
   };
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      handleLogin();
+    }
+  };
 
   return (
     <Style.Wrapper>
       <Style.LoginContainer>
-        <Style.Title>Login</Style.Title>
-        <Style.Input
+        <Title>Login</Title>
+        <Input
           fieldError={fieldError}
           type="number"
           placeholder="Id"
           onChange={(e) => setUserId(e.target.value)}
+          onKeyDown={handleKeyDown}
         />
-        <Style.Input
+        <Input
           fieldError={fieldError}
           placeholder="Name"
           onChange={(e) => setUserName(e.target.value)}
+          onKeyDown={handleKeyDown}
         />
-        <Style.Button onClick={handleLogin}>Login</Style.Button>
+        <Button onClick={handleLogin}>Login</Button>
       </Style.LoginContainer>
     </Style.Wrapper>
   );

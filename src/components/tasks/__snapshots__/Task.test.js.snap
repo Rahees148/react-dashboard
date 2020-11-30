@@ -6,22 +6,24 @@ Array [
     className="sc-gsTCUz fmULOU"
   >
     <h3
-      className="sc-dlfnbm jLgNUo"
+      className="sc-iqHYGH jNIVzu"
     >
       Tasks
     </h3>
     <div
-      className="sc-hKgILt bhRaLE"
+      className="sc-dlfnbm jiPmFS"
     >
       <input
-        className="sc-jSgupP dnStGB"
+        className="sc-hKgILt gpIyHs"
         onChange={[Function]}
         placeholder="Search by task name"
         type="search"
       />
       <button
-        className="sc-eCssSg fexhFr"
+        className="sc-kEjbxe khqoZl"
+        disabled={false}
         onClick={[Function]}
+        type="button"
       >
         + New Task
       </button>
