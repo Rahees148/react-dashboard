@@ -6,7 +6,7 @@ import { useContext } from "react";
 import { TaskContext } from "../../context/TaskContext";
 
 //Atoms
-import Title from '../atoms/title/Title';
+import Title from "../atoms/title/Title";
 
 function CompletedTask() {
   const context = useContext(TaskContext);

@@ -7,7 +7,7 @@ import AuthApi from "../../context/AuthApi";
 //Atoms
 import Button from "../atoms/button/Button";
 import Input from "../atoms/input/Input";
-import Title from '../atoms/title/Title';
+import Title from "../atoms/title/Title";
 
 function NewTask() {
   const context = useContext(TaskContext);

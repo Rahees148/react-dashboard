@@ -26,5 +26,5 @@ const NoTaskContainer = styled.div`
 
 export const Style = {
   Wrapper,
-  NoTaskContainer
+  NoTaskContainer,
 };
